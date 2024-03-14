@@ -9,8 +9,8 @@ const value1 = ref(null);
 <template>
   <div class="card flex flex-wrap justify-content-center gap-3">
     <IconField class="space-x-3">
-      <InputText v-model="value1" placeholder="Busca por especialidad"/>
-      <Button>Buscar</Button>
+      <InputText v-model="value1" placeholder="Buscar por especialidad"/>
+      <Button class="bg-blue-custom">Buscar</Button>
     </IconField>
   </div>
 </template>
