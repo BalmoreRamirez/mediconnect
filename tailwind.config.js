@@ -7,7 +7,15 @@ export default {
     "./node_modules/primevue/**/*.{vue,js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'blue-custom': '#3B72FF',
+        'green-custom': '#50DE89',
+        'yellow-custom': '#FFDA7A',
+        'purple-custom': '#AIECBF',
+        'light-white':'#FBFBFB'
+      },
+    },
   },
   plugins: [],
 }
