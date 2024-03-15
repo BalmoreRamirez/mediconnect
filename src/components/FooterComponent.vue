@@ -4,7 +4,7 @@
 
 <template>
   <footer class="bg-blue-custom text-white py-8">
-    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
+    <div class="container mx-auto flex flex-col md:flex-row items-start justify-between px-4">
       <!-- Sección de Enlaces -->
       <div class="mb-4 md:mb-0">
         <h3 class="text-lg font-semibold mb-2">Enlaces</h3>
@@ -44,7 +44,6 @@
       </div>
     </div>
   </footer>
-
 </template>
 
 <style scoped>
