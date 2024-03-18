@@ -13,7 +13,9 @@ export default {
         'green-custom': '#50DE89',
         'yellow-custom': '#FFDA7A',
         'purple-custom': '#AIECBF',
-        'light-white':'#FBFBFB'
+        'light-white':'#FBFBFB',
+        'bg-primary':'#F2F2F2',
+        'bg-secondary':'#FFFF'
       },
     },
   },

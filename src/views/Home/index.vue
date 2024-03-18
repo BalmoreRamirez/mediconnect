@@ -1,31 +1,44 @@
 <script setup>
-import BuscadorComponent from "../../components/BuscadorComponent.vue";
+import Button from "primevue/button";
+import InputText from "primevue/inputtext";
 import FooterComponent from "../../components/FooterComponent.vue";
 import MenuComponent from "../../components/MenuComponent.vue";
+import {ref} from "vue";
+
+const buscar = ref()
 </script>
 
 <template>
 
-  <div class="min-h-screen flex flex-col">
-
-    <div class="bg-light-white shadow-md">
-      <MenuComponent></MenuComponent>
-    </div>
-
-    <div class="w-4/5 mx-auto mb-10 mt-8 ">
-      <div class="flex justify-center items-center h-80 shadow-md  w-full bg-white rounded">
-        <BuscadorComponent></BuscadorComponent>
+  <div class="bg-light-white shadow-md">
+    <MenuComponent></MenuComponent>
+  </div>
+  <div class="w-[80%] mx-auto bg-bg-primary flex justify-center items-start mt-5 space-x-3">
+    <div class="w-[50%] bg-bg-secondary shadow-md rounded p-10 space-y-3">
+      <IconField class=" flex justify-center items-center space-x-3 ">
+        <InputText class="w-[65%]" v-model="buscar" placeholder="Ingrese la especialidad que busca"/>
+        <div class="w-[25%]">
+          <Button class="bg-blue-custom w-full justify-center">Buscar <i class="pi pi-angle-right"></i></Button>
+        </div>
+      </IconField>
+      <div class="w-full">
+        <div class="w-[25%] bg-amber-300 p-3">
+          <div class="flex justify-between">
+            <div class="w-8">
+              <img class="rounded-full"  src="https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U">
+            </div>
+            <div class="text-left">
+              <p>Dra Lopez</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="absolute bottom-0 w-full">
-      <FooterComponent></FooterComponent>
+    <div class="w-[50%] h-auto bg-bg-secondary">
+      <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15505.678886345293!2d-89.2372027!3d13.69301055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6330410eacae2d%3A0xf3bd10411c7f3afb!2sMonumento%20al%20Divino%20Salvador%20del%20Mundo!5e0!3m2!1ses-419!2ssv!4v1710797369045!5m2!1ses-419!2ssv"
+          width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-
   </div>
-
 </template>
-
-<style scoped>
-
-</style>
