@@ -1,9 +1,11 @@
 <script setup>
 import {ref} from "vue";
-import ModalComponent from "./ModalComponent.vue";
+import ModalComponent from "./LoginComponent.vue";
 import Button from "primevue/button";
+import RegisterComponent from "./RegisterComponent.vue";
 
-const visible = ref(false);
+const visibleLogin = ref(false);
+const visibleRegister = ref(false);
 const isMobileMenuOpen = ref(false);
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value;
@@ -26,7 +28,7 @@ const toggleMobileMenu = () => {
           <i class="pi pi-user-md mr-1"></i>
           Médicos
         </a>
-        <a href="#" class="text-gray-800 hover:text-blue-custom flex items-center">
+        <a href="#" class="text-gray-800 hover:text-blue-custom flex items-center" @click="visibleRegister=true">
           <i class="pi pi-user-plus mr-1"></i>
           Hazte Miembro
         </a>
@@ -37,7 +39,7 @@ const toggleMobileMenu = () => {
       </div>
 
       <div class="flex items-center text-gray-800">
-        <button class="bg-blue-custom p-2 rounded text-white" @click="visible=true">Login</button>
+        <button class="bg-blue-custom p-2 rounded text-white" @click="visibleLogin=true">Login</button>
       </div>
 
       <div class="md:hidden">
@@ -55,12 +57,24 @@ const toggleMobileMenu = () => {
       </div>
     </div>
   </nav>
-  <ModalComponent :show="visible" v-if="visible">
+
+  <!--Login-->
+  <ModalComponent :show="visibleLogin" v-if="visibleLogin">
     <template #footer>
-      <Button type="button" label="Cancelar" severity="secondary" @click="visible = false"></Button>
-      <Button class="bg-blue-custom" type="button" label="Ingresar" @click="visible = false"></Button>
+      <Button type="button" label="Cancelar" severity="secondary" @click="visibleLogin = false"></Button>
+      <Button class="bg-blue-custom" type="button" label="Ingresar" @click="visibleLogin = false"></Button>
     </template>
   </ModalComponent>
+
+  <RegisterComponent :show="visibleRegister" v-if="visibleRegister">
+    <template #header>
+      <p>Bienvenido a MediConnect</p>
+    </template>
+    <template #footer>
+      <Button type="button" label="Cancelar" severity="secondary" @click="visibleRegister = false"></Button>
+      <Button class="bg-blue-custom" type="button" label="Guardar" @click="visibleRegister = false"></Button>
+    </template>
+  </RegisterComponent>
 
 </template>
 
