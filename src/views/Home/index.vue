@@ -1,7 +1,7 @@
 <script setup>
 import Button from "primevue/button";
 import InputText from "primevue/inputtext";
-import FooterComponent from "../../components/FooterComponent.vue";
+import perfil from "../../assets/perfil.jpeg";
 import MenuComponent from "../../components/MenuComponent.vue";
 import {ref} from "vue";
 
@@ -13,23 +13,32 @@ const buscar = ref()
   <div class="bg-light-white shadow-md">
     <MenuComponent></MenuComponent>
   </div>
-  <div class="w-[80%] mx-auto bg-bg-primary flex justify-center items-start mt-5 space-x-3">
+  <div class="w-[80%] mx-auto bg-bg-primary flex justify-center items-start mt-5 py-5">
     <div class="w-[50%] bg-bg-secondary shadow-md rounded p-10 space-y-3">
-      <IconField class=" flex justify-center items-center space-x-3 ">
+      <IconField class="flex justify-start items-center space-x-3 ">
         <InputText class="w-[65%]" v-model="buscar" placeholder="Ingrese la especialidad que busca"/>
         <div class="w-[25%]">
           <Button class="bg-blue-custom w-full justify-center">Buscar <i class="pi pi-angle-right"></i></Button>
         </div>
       </IconField>
       <div class="w-full">
-        <div class="w-[25%] bg-amber-300 p-3">
-          <div class="flex justify-between">
-            <div class="w-8">
-              <img class="rounded-full"  src="https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U">
+        <div class="w-[50%] p-3 shadow">
+          <div class="flex justify-start">
+            <div class="w-8 mr-3">
+              <img class="rounded-full" :src="perfil" alt="Imagen de perfil" />
             </div>
             <div class="text-left">
-              <p>Dra Lopez</p>
+              <p class="text-xs">Diana Hernandez</p>
+              <p class="text-xs">Dra general</p>
             </div>
+          </div>
+          <div class="py-3 flex">
+            <!--icon ubicacion-->
+            <i class="pi pi-map-marker text-blue-custom"></i>
+            <p class="text-xs text-gray-700 ml-2">
+              Paseo General Escalón &, Alameda Franklin
+              Delano Roosevelt, San Salvador
+            </p>
           </div>
         </div>
       </div>
